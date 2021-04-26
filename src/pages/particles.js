@@ -4,12 +4,13 @@ import { css } from "@emotion/react"
 
 const Partic = () => {
   const particles0 = {
+    fpsLimit: 60,
     background: {
       color: {
         value: "#fff7a1",
       },
       size: "cover",
-      opacity: 0.5,
+      opacity: 0.2,
       position: "50% 50%",
     },
     particles: {
@@ -22,10 +23,27 @@ const Partic = () => {
       },
       value: 5,
       color: {
-        value: ["#ffFFFC", "#fff0FF", "#fffc00"],
+        value: ["#FFFFFF", "FFFBE6", "#E6EAFF", "#FFE6FB", "#FFE6FF"],
       },
       shape: {
-        type: "star",
+        character: {
+          fill: true,
+          font: "Verdana",
+          value: ["✦", "✧", "✶", "★", "Jazz"],
+          // value: ["A", "B", "C"],
+          style: "normal",
+          weight: 800,
+        },
+
+        image: [
+          {
+            height: 100,
+            replace_color: true,
+            src: "images/github.svg",
+            width: 100,
+          },
+        ],
+        type: ["star", "image", "character", "char"],
       },
       size: {
         random: {
@@ -59,15 +77,15 @@ const Partic = () => {
         direction: "none",
         enable: true,
         random: true,
-        speed: 0.1,
+        speed: 1,
         straight: false,
         outMode: "bounce",
+        trail: {
+          // fillColor: "#fff",
+          enable: true,
+          length: 10,
+        },
       },
-      //   trail: {
-      //     enable: true,
-      //     length: 5,
-      //     fillColor: "#fff",
-      //   },
     },
     detectRetina: true,
     interactivity: {
@@ -79,9 +97,17 @@ const Partic = () => {
         },
         onHover: {
           enable: true,
-          mode: "repulse",
+          mode: "bubble",
         },
         // resize: true,
+      },
+      modes: {
+        bubble: {
+          distance: 200,
+          duration: 4,
+          size: 18,
+          opacity: 8,
+        },
       },
     },
   }
