@@ -6,10 +6,11 @@ const Partic = () => {
   const particles0 = {
     background: {
       color: {
-        value: "#0d47a1",
+        value: "#fff7a1",
       },
       size: "cover",
       opacity: 0.5,
+      position: "50% 50%",
     },
     particles: {
       number: {
@@ -17,13 +18,11 @@ const Partic = () => {
           enable: true,
           value_area: 800,
         },
-        value: 80,
+        value: 8,
       },
+      value: 5,
       color: {
-        value: ["#00FFFC", "#FC00FF", "#fffc00"],
-      },
-      opacity: {
-        value: 1,
+        value: ["#ffFFFC", "#fff0FF", "#fffc00"],
       },
       shape: {
         type: "star",
@@ -47,14 +46,22 @@ const Partic = () => {
           startValue: "random",
         },
       },
-
+      opacity: {
+        animation: {
+          speed: 10,
+          opacityMin: 0,
+          sync: true,
+        },
+        value: 1,
+        random: true,
+      },
       move: {
-        direction: "top-left",
+        direction: "none",
         enable: true,
-        outMode: "out",
-        random: false,
+        random: true,
         speed: 0.1,
-        straight: true,
+        straight: false,
+        outMode: "bounce",
       },
       //   trail: {
       //     enable: true,
@@ -94,7 +101,6 @@ const Partic = () => {
         width: 100%;
         height: 80vh;
         background-color: blue;
-        border: 2px solid red;
       `}
     >
       <Particles
